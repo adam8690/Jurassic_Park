@@ -9,8 +9,9 @@ dinosaur = new Dinosaur('T-Rex', 1);
     assert.strictEqual('T-Rex', dinosaur.type);
   })
 
-
-
+  it('dinosaur has a offSpringRate', function(){
+    assert.strictEqual(1, dinosaur.offSpringRate);
+  })
 
 
 
