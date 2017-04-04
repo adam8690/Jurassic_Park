@@ -4,13 +4,4 @@ Dinosaur = function(type, offSpringRate){
 }
 
 
-
-
-
-
-
-
-
-
-
 module.exports = Dinosaur;
