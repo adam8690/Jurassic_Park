@@ -7,7 +7,14 @@ Park = function(){
 Park.prototype = {
   addDinosaur: function(dinosaur){
     this.enclosure.push(dinosaur);
-  }
+  },
+  removeType: function(type){
+    for(i = 0; this.enclosure[i]; i++){
+      if(this.enclosure[i].type === type){
+        this.enclosure.splice(i, 1);
+      }
+    }
+  },
 }
 
 module.exports = Park;
