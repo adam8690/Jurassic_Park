@@ -7,7 +7,7 @@ describe('park', function(){
   park = new Park();
   var dinosaur = new Dinosaur('T-Rex', 1);
   var barney = new Dinosaur('purple', 0);
-  console.log(dinosaur);
+  var raptor = new Dinosaur('Velociraptor', 5);
 
   it('has enclosure', function(){
     // assert false on park enclosure because an empty array is falsey but no array would be null or undefined? 
@@ -25,6 +25,17 @@ describe('park', function(){
     park.addDinosaur(barney);
     park.removeType('purple');
     assert.strictEqual(dinosaur, park.enclosure[0]);
+  })
+
+  it('can return all dinos with >2 offspringrate', function(){
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(barney);
+    park.addDinosaur(barney);
+    park.addDinosaur(raptor);
+    park.addDinosaur(raptor);
+    var highBirthers = park.getHighBirthRateDinos();
+    assert.strictEqual(2, highBirthers.length);
   })
 
 

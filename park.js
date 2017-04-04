@@ -15,6 +15,15 @@ Park.prototype = {
       }
     }
   },
+  getHighBirthRateDinos: function(){
+    var highBirthers = [];
+    for(i=0; this.enclosure[i]; i++){
+      if(this.enclosure[i].offSpringRate > 2){
+        highBirthers.push(this.enclosure[i]);
+      }
+    }
+    return highBirthers;
+  }
 }
 
 module.exports = Park;
