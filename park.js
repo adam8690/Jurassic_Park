@@ -25,14 +25,15 @@ Park.prototype = {
     return highBirthers;
   },
   advanceYears: function(noOfYears){
-    initialEnclosureLength = this.enclosure.length;
     for (var year = 0; year < noOfYears; year++){
-      for (i=0; i < initialEnclosureLength; i++){
+      enclosureLength = this.enclosure.length;
+      for (i=0; i < enclosureLength; i++){
         for(var births = 1; births <= this.enclosure[i].offSpringRate; births++){
           var dino = new Dinosaur(this.enclosure[i].type, this.enclosure[i].offSpringRate);
           this.addDinosaur(dino);
         }
       }
+      enclosureLength = this.enclosure.length;
     }
   }
 }

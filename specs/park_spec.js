@@ -47,4 +47,12 @@ describe('park', function(){
     assert.strictEqual(6, park.enclosure.length);
   })
 
+  it('Velociraptors after two years should be 36', function(){
+    park.enclosure = [];
+    park.addDinosaur(raptor);
+    park.advanceYears(2);
+    // breaks if more than 9 years go by!!
+    assert.strictEqual(36, park.enclosure.length);
+  })
+
 })
