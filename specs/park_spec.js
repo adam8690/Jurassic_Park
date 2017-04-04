@@ -34,8 +34,10 @@ describe('park', function(){
     park.addDinosaur(barney);
     park.addDinosaur(raptor);
     park.addDinosaur(raptor);
+    park.addDinosaur(raptor);
     var highBirthers = park.getHighBirthRateDinos();
-    assert.strictEqual(2, highBirthers.length);
+    assert.strictEqual(3, highBirthers.length);
+    assert.strictEqual('Velociraptor', highBirthers[0].type);
   })
 
 
