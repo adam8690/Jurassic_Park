@@ -55,4 +55,15 @@ describe('park', function(){
     assert.strictEqual(36, park.enclosure.length);
   })
 
+  it('add 2 of each dino and should have correc number after 1 year', function(){
+    park.enclosure = [];
+    park.addDinosaur(raptor);
+    park.addDinosaur(raptor);
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur);
+    park.advanceYears(2);
+    assert.strictEqual(80, park.enclosure.length);
+  })
+
+
 })
